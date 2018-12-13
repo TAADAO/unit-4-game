@@ -8,7 +8,12 @@ var playerScore = Math.round(Math.random() * 12) + 1;
 var wins = 0
 var losses = 0
 
-$(".cry1, .cry2, .cry3, .cry4").on("click", function () {
+
+
+$(".allCrystals").on("click", function () {
+
+    //I can't figure out how to create the sub-function that allows the random numbers be assigned to each crystal
+    //instead of all of them. Everything else seems to be okay but that one thing. 
 
     counter += playerScore;
 
@@ -18,14 +23,15 @@ $(".cry1, .cry2, .cry3, .cry4").on("click", function () {
         alert("You win!");
         wins++;
         $('.totalWins').text("Wins: " + wins);
-        document.body.style.counterReset = ".yourScore";
+        counter = 0;
+
 
     }
     else if (counter > targetNumber) {
         alert("You lose!");
         losses++;
         $('.totalLosses').text("Losses: " + losses);
-        document.body.style.counterReset = ".yourScore";
+        counter = 0;
     }
 
 });
